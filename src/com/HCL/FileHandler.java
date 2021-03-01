@@ -31,7 +31,7 @@ public class FileHandler {
             }
         }
 
-        System.out.println("\n\"" + files.size() + "\" Files in Current Directory");
+        System.out.println("\n(" + files.size() + ") Files in Current Directory");
         for (int i = 0; i < files.size(); i++){
             System.out.println(files.get(i));
         }
@@ -51,6 +51,23 @@ public class FileHandler {
         }
         catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void deleteFile(String directoryPath, String documentName){
+        File myFile = new File(directoryPath, documentName);
+
+        if (myFile.exists()){
+            try{
+                myFile.delete();
+                System.out.println("File \"" + myFile.getName() + "\" was deleted");
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        else{
+            System.out.println("File \"" + documentName + "\" does not exist in current directory");
         }
     }
 

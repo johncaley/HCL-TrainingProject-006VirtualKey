@@ -20,7 +20,8 @@ public class UserInterface {
 
     public static void MainMenu(){
 
-        System.out.println("\nPlease Select Options:");
+        System.out.println("\n[Main Menu]");
+        System.out.println("Please Select Options:");
         System.out.println("1) Display File Names");
         System.out.println("2) Additional Operations");
         System.out.println("3) Close Application");
@@ -45,9 +46,12 @@ public class UserInterface {
     }
 
     public static void AditionalOperations(){
-        System.out.println("\nPlease Select Options:");
+
+        System.out.println("\n[Aditional Operations]");
+        System.out.println("Please Select Options:");
         System.out.println("1) Add User Defined File");
-        System.out.println("2) Return to Main Menu");
+        System.out.println("2) Delete User Defined File");
+        System.out.println("3) Return to Main Menu");
         String input = sc.nextLine();
 
         switch (input) {
@@ -55,6 +59,9 @@ public class UserInterface {
                 addNewFile();
                 break;
             case "2":
+                deleteFile();
+                break;
+            case "3":
                 MainMenu();
                 break;
             default:
@@ -76,6 +83,13 @@ public class UserInterface {
         documentName = sc.nextLine();
 
         myFileHandler.addNewFile(directoryPath, documentName);
+        AditionalOperations();
+    }
+
+    public static void deleteFile(){
+        System.out.println("Create new file name:");
+        String documentName = sc.nextLine();
+        myFileHandler.deleteFile(directoryPath, documentName);
         AditionalOperations();
     }
 
