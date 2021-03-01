@@ -2,10 +2,10 @@ package com.HCL;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class FileHandler {
-
 
     public FileHandler(){
     }
@@ -38,7 +38,20 @@ public class FileHandler {
         for (int i = 0; i < directories.size(); i++){
             System.out.println(directories.get(i) + " <DIR>");
         }
+    }
 
+    public void addNewFile(String directoryPath, String documentName){
+        File myFile = new File(directoryPath, documentName);
+
+        boolean execute = false;
+
+        try{
+            execute = myFile.createNewFile();
+            System.out.println("File \"" + myFile.getName() + "\" Created");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
