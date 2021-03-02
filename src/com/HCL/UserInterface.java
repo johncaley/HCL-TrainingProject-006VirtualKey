@@ -2,6 +2,7 @@ package com.HCL;
 
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class UserInterface {
 
@@ -83,10 +84,16 @@ public class UserInterface {
         String documentName;
         StringBuilder documentContents = new StringBuilder();
 
-        System.out.println("Create new file name:");
+        System.out.println("Create new file name (include extension: \".txt\", \".doc\", etc):");
         documentName = sc.nextLine();
 
-        myFileHandler.addNewFile(directoryPath, documentName);
+
+        if (Pattern.matches(".*\\..*", documentName)){
+            myFileHandler.addNewFile(directoryPath, documentName);
+        }
+        else{
+            System.out.println("Invalid Input: Must include file extension");
+        }
         AditionalOperations();
     }
 
