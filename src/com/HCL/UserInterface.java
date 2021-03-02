@@ -15,7 +15,7 @@ public class UserInterface {
         System.out.println("///////////////////////////////");
         System.out.println("//  Welcome to File Manager  //");
         System.out.println("//  Author: John Caley       //");
-        System.out.println("//  Ver 1.0.0                //");
+        System.out.println("//  Ver 1.0.2                //");
         System.out.println("///////////////////////////////");
     }
 
