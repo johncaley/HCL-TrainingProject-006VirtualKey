@@ -14,7 +14,7 @@ public class UserInterface {
         System.out.println("///////////////////////////////");
         System.out.println("//  Welcome to File Manager  //");
         System.out.println("//  Author: John Caley       //");
-        System.out.println("//  Ver 0.9.2                //");
+        System.out.println("//  Ver 1.0.0                //");
         System.out.println("///////////////////////////////");
     }
 
@@ -51,7 +51,8 @@ public class UserInterface {
         System.out.println("Please Select Options:");
         System.out.println("1) Add User Defined File");
         System.out.println("2) Delete User Defined File");
-        System.out.println("3) Return to Main Menu");
+        System.out.println("3) Search User Defined File");
+        System.out.println("4) Return to Main Menu");
         String input = sc.nextLine();
 
         switch (input) {
@@ -62,6 +63,9 @@ public class UserInterface {
                 deleteFile();
                 break;
             case "3":
+                searchForFile();
+                break;
+            case "4":
                 MainMenu();
                 break;
             default:
@@ -90,6 +94,13 @@ public class UserInterface {
         System.out.println("Create new file name:");
         String documentName = sc.nextLine();
         myFileHandler.deleteFile(directoryPath, documentName);
+        AditionalOperations();
+    }
+
+    public static void searchForFile(){
+        System.out.println("Enter file name to search:");
+        String documentName = sc.nextLine();
+        myFileHandler.searchForFile(directoryPath, documentName);
         AditionalOperations();
     }
 

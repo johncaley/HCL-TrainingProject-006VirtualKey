@@ -71,4 +71,14 @@ public class FileHandler {
         }
     }
 
+    public void searchForFile(String directoryPath, String documentName){
+        File myFile = new File(directoryPath, documentName);
+        if (myFile.exists()){
+            System.out.println("File \"" + documentName + "\" exist in current directory");
+        }
+        else {
+            System.out.println("File \"" + documentName + "\" does not exist in current directory");
+        }
+    }
+
 }
