@@ -71,7 +71,7 @@ public class UserInterface {
                 break;
             default:
                 System.out.println("Invalid Selection");
-                ApplicationDetails();
+                AditionalOperations();
         }
     }
 
